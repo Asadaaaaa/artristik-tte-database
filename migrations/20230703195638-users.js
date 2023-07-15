@@ -5,7 +5,7 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable('users', {
       id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.BIGINT,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
@@ -49,12 +49,16 @@ module.exports = {
         allowNull: false,
         defaultValue: false
       },
+      hashing_salt: {
+        type: Sequelize.STRING(20),
+        allowNull: false
+      },
       username: {
         type: Sequelize.STRING(15),
         allowNull: true
       },
       password: {
-        type: Sequelize.STRING(24),
+        type: Sequelize.TEXT,
         allowNull: true
       },
       nik: {
@@ -65,9 +69,13 @@ module.exports = {
         type: Sequelize.STRING(20),
         allowNull: true
       },
+      selfie: {
+        type: Sequelize.STRING(200),
+        allowNull: true
+      },
       identity_proof: {
         type: Sequelize.STRING(200),
-        allowNull: false
+        allowNull: true
       },
       created_at: {
         type: Sequelize.DATE,
