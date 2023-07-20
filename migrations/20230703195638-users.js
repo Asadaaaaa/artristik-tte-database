@@ -49,10 +49,6 @@ module.exports = {
         allowNull: false,
         defaultValue: false
       },
-      hashing_salt: {
-        type: Sequelize.STRING(20),
-        allowNull: false
-      },
       username: {
         type: Sequelize.STRING(15),
         allowNull: true
@@ -75,6 +71,18 @@ module.exports = {
       },
       identity_proof: {
         type: Sequelize.STRING(200),
+        allowNull: true
+      },
+      hashing_salt: {
+        type: Sequelize.STRING(20),
+        allowNull: false
+      },
+      rsa_private_key: {
+        type: Sequelize.TEXT,
+        allowNull: true
+      },
+      rsa_public_key: {
+        type: Sequelize.TEXT,
         allowNull: true
       },
       created_at: {
