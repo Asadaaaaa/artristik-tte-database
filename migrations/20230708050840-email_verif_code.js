@@ -16,7 +16,7 @@ module.exports = {
         defaultValue: Sequelize.literal(`gen_random_uuid()`)
       },
       user_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.BIGINT,
         allowNull: false,
         references: {
           model: 'users',
