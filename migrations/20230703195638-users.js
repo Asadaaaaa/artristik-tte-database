@@ -54,7 +54,7 @@ module.exports = {
         allowNull: true
       },
       password: {
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING(64),
         allowNull: true
       },
       nik: {
