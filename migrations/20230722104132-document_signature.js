@@ -32,13 +32,13 @@ module.exports = {
         allowNull: false,
         defaultValue: false
       },
-      file_path: {
+      directory_path: {
         type: Sequelize.STRING(200),
         allowNull: true
       },
-      data: {
+      metadata: {
         type: Sequelize.TEXT,
-        allowNull: false
+        allowNull: true
       },
       created_at: {
         type: Sequelize.DATE,
@@ -48,6 +48,11 @@ module.exports = {
       updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
+        defaultValue: Sequelize.DATE
+      },
+      deleted_at: {
+        type: Sequelize.DATE,
+        allowNull: true,
         defaultValue: Sequelize.DATE
       }
     });
